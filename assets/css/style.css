@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+/* base css start */
+* {
+    margin: 0;
+}
+
+/* base css end */
+body {
+    font-family: 'Electrolize', sans-serif;
+    background-color: black;
+}
+
+.container {
+    background-color: black;
+    color: white;
+}
+
+/* navbar css start */
+.navbar {
+    background-color: black;
+    height: 60px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.navbar-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 50px;
+}
+
+.logo {
+    color: rgb(255, 70, 70);
+    font-size: 30px;
+}
+
+.menu-list {
+    display: flex;
+    list-style: none;
+    column-gap: 30px;
+}
+
+.menu-list-item {
+    cursor: pointer;
+}
+
+.menu-list-item.active {
+    font-weight: bold;
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.profile-picture {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile-text-container {
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    line-height: 1px;
+}
+
+.toggle {
+    width: 40px;
+    height: 20px;
+    background-color: white;
+    position: relative;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.toggle-icon {
+    color: goldenrod;
+}
+
+.toggle-ball {
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    right: 1px;
+    transition: 0.5s ease all;
+}
+
+.menu-list-item:hover {
+    font-weight: bold;
+}
+
+
+/* navbar css end */
+
+/* sidebar css start */
+.sidebar {
+    background-color: black;
+    color: white;
+    height: 90%;
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    row-gap: 40px;
+    position: fixed;
+    top: 0;
+}
+
+.sidebar i {
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* sidebar css end */
+
+/* featured content css start */
+.content-wrapper {
+    margin-left: 50px;
+}
+
+.featured-content {
+    background: url("../img/interstellar.jpg");
+    padding: 50px;
+    height: calc(100vh - 160px);
+    background-size: 100% 100%;
+}
+
+.featured-title {
+    width: 400px;
+}
+
+.featured-desc {
+    width: 500px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin: 30px 0;
+    color: black;
+}
+
+.featured-buttons {
+    display: flex;
+    column-gap: 20px;
+}
+
+.featured-buttons button {
+    padding: 10px 25px;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    column-gap: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.featured-buttons .info-button {
+    background-color: rgb(145, 142, 142, 0.5);
+    color: white;
+}
+
+/* featured content css end */
+
+/* filter start */
+.movie-list-filter {
+    margin: 20px 0 20px 0px;
+    padding: 20px;
+}
+
+.movie-list-filter select {
+    background-color: black;
+    color: white;
+    padding: 7px 0;
+    width: 125px;
+}
+
+/* filter end */
+
+/* movie list start */
+.movie-list-container {
+    margin: 20px;
+}
+
+/* movie list end */
+
+/* movie list start */
+.movie-item {
+    position: relative;
+}
+
+.movie-item:hover .movie-item-title,
+.movie-item:hover .movie-item-buttons {
+    opacity: 1;
+}
+
+.movie-item:hover .movie-item-img {
+    transform: scale(1.2);
+    margin: 0 30px;
+    opacity: 0.5;
+}
+
+.movie-list {
+    list-style: none;
+    padding: 0;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    column-gap: 30px;
+    transform: translateX(0);
+    transition: 1s all ease-in-out;
+}
+
+.movie-list-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.movie-item-img {
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    transition: 1s all ease-in-out;
+}
+
+.movie-item-title {
+    background-color: rgb(40, 40, 40, 0.4);
+    padding: 0 10px;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10%;
+    left: 50px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-item-buttons {
+    background-color: rgb(40, 40, 40, 0.4);
+    padding: 10px;
+    font-weight: bold;
+    position: absolute;
+    bottom: 10%;
+    left: 50px;
+    display: flex;
+    column-gap: 20px;
+    opacity: 0;
+    transition: 1s all ease-in-out;
+}
+
+.movie-item-buttons i {
+    cursor: pointer;
+    opacity: 0.5;
+    font-size: 20px;
+    transition: 0.5s all ease;
+}
+
+.movie-item-buttons i.hover {
+    opacity: 1;
+}
+
+.arrow {
+    width: 100px;
+    display: flex;
+    font-size: 120px;
+    position: absolute;
+    right: 0;
+    top: 100px;
+    opacity: 0.5;
+    transition: 0.5s ease all;
+    cursor: pointer;
+}
+
+.arrow:hover {
+    opacity: 1;
+}
+
+/* movie list end */
+
+/* light mode start */
+.container.active{
+    background-color: white;
+}
+.navbar.active{
+    background-color: white;
+    color: black;
+}
+.sidebar.active{
+    background-color: white;
+    color: black;
+}
+.sidebar i.active{
+    color: black;
+}
+.movie-list-title.active{
+    color: black;
+}
+.toggle.active{
+    background-color: black;
+}
+.toggle-ball.active{
+    background-color: white;
+    transform: translateX(-20px);
+}
+.movie-list-filter select.active{
+    background-color: white;
+    color: black;
+}
+/* light mode end */
+
+/* responsive design start */
+@media only screen and (max-width: 800px){
+    .menu-container{
+        display: none;
+    }
+
+    .featured-content{
+        height: 50vh;
+    }
+
+    .featured-title{
+        width: 200px;
+    }
+
+    .featured-desc{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        max-width: 200px;
+        padding: 0;
+    }
+}
+/*! responsive design end  */
